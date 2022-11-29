@@ -1,27 +1,5 @@
-public class Course {
-    private String titleString;
-    private String descriptionString;
+public class Course extends Contends{
     private int workload;
-
-
-    public String getTitleString() {
-        return titleString;
-    }
-
-
-    public void setTitleString(String titleString) {
-        this.titleString = titleString;
-    }
-
-
-    public String getDescriptionString() {
-        return descriptionString;
-    }
-
-
-    public void setDescriptionString(String descriptionString) {
-        this.descriptionString = descriptionString;
-    }
 
 
     public int getWorkload() {
@@ -36,8 +14,14 @@ public class Course {
 
     @Override
     public String toString() {
-        return "Course [titleString=" + titleString + ", descriptionString=" + descriptionString + ", workload="
+        return "Course [titleString=" + getTitleString() + ", descriptionString=" + getDescriptionString() + ", workload="
                 + workload + "]";
+    }
+
+
+    @Override
+    public double calculateXp() {
+        return XP_PATTERN * workload;
     }
 
     
